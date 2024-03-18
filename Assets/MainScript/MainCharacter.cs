@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCharacter : MonoBehaviour
 {
     public float Health = 100;
     public float Shield;
-    public float State;
+    public float State=0;
     public float Level;
     public float Damage=10;
     public float ExtraDamage = 0;
 
+
+    public TMPro.TextMeshProUGUI HealthText;
+    public TMPro.TextMeshProUGUI ShieldText;
     
 
-    public float state=0;
 
-    
 
 
 
@@ -34,40 +36,50 @@ public class MainCharacter : MonoBehaviour
         
         //Di�er objeler taraf�ndan eri�mesi i�in 2
         Instance = this;
+        
+        InvokeRepeating("UI", 1, 1);
+    }
+
+    private void Update()
+    {
+        if (State == 2)
+        {
+            Animator.SetFloat("State", 1);
+            Invoke("Stop", 1);
+
+
+        }
+
+        if (Health < 1)
+        {
+            Health = 100;
+            SceneManager.LoadScene("LobbyCoppy");
+            
+
+        }
     }
 
     //sald�r� animasyonu
-   public void Animation()
-    {
-        Animator.SetFloat("State", 1);
-        Invoke("Stop", 1);
-        state=3;
-
-        
-        
-    }
+    
 
     //�dle a d�n��
     private void Stop() 
     {
-
+        State = 3;
         Animator.SetFloat("State", 0);
         
         
     }
 
     //�l�m
-    private void Update()
+
+    private void UI()
     {
-        if (Health < 1)
-        {
-            gameObject.SetActive(false);
-            
-        }
+        ShieldText.text = Shield.ToString();
+        HealthText.text = Health.ToString();
     }
-    
-    
-       
-    
+
+
+
 
 }

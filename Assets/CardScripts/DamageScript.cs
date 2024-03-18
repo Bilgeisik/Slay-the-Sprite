@@ -11,12 +11,12 @@ public class DamageScript : MonoBehaviour
     //fonksiyon �al��t���nda ekstra hasar ekler
     public void DamageBoost()
     {   //damage artar
-        if (MainCharacter.Instance.state == 0)
+        if (MainCharacter.Instance.State == 0)
         {
             MainCharacter.Instance.ExtraDamage = ExtraDamage;
 
             //tur atlar
-            MainCharacter.Instance.state = 1; 
+            MainCharacter.Instance.State = 1; 
         }
         
     }

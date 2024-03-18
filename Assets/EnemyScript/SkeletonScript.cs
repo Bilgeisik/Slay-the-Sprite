@@ -16,30 +16,18 @@ public class SkeletonScript : MonoBehaviour
     {
         
 
-        if(MainCharacter.Instance.state==0)
-        {
-            Health-=MainCharacter.Instance.Damage;
-            HealthText.text = Health.ToString();
-
-            MainCharacter.Instance.state=2;
-
-            if (Health < 1)
-            {
-                gameObject.SetActive(false);
-                Scene.Instance.EnemyNumber -= 1;
-            }
+        
 
 
-        }
-        if (MainCharacter.Instance.state == 1)
+        if (MainCharacter.Instance.State == 1)
         {
 
             //hasar alma
             Health -=MainCharacter.Instance.Damage+ MainCharacter.Instance.ExtraDamage;
             HealthText.text = Health.ToString();
 
-            //tur atlama
-            MainCharacter.Instance.state = 2;
+            
+            MainCharacter.Instance.State = 2;
 
             //�lme
             if (Health < 1)

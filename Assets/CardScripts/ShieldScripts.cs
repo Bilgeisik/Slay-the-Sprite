@@ -12,13 +12,13 @@ public class ShieldScripts : MonoBehaviour
     public void ShieldBoost()
     {
         //kalkan artar
-        if (MainCharacter.Instance.state == 0)
+        if (MainCharacter.Instance.State == 0)
         {
             MainCharacter.Instance.Shield = 10;
             ShieldText.text = ExtraShield.ToString();
 
             //tur atlar
-            MainCharacter.Instance.state = 1;
+            MainCharacter.Instance.State = 1;
 
             hasShield=true;
         }

@@ -17,12 +17,12 @@ public class Wizard : MonoBehaviour
      public void TakingDamage()
     {
 
-        if(MainCharacter.Instance.state==0)
+        if(MainCharacter.Instance.State ==0)
         {
             health-=MainCharacter.Instance.Damage;
             HealthText.text = health.ToString();
 
-            MainCharacter.Instance.state=2;
+            MainCharacter.Instance.State =2;
 
             if (health < 1)
             {
@@ -32,7 +32,7 @@ public class Wizard : MonoBehaviour
 
 
         }
-        if (MainCharacter.Instance.state == 1)
+        if (MainCharacter.Instance.State == 1)
         {
 
             
@@ -40,7 +40,7 @@ public class Wizard : MonoBehaviour
             HealthText.text = health.ToString();
 
             
-            MainCharacter.Instance.state = 2;
+            MainCharacter.Instance.State = 2;
 
             
             if (health < 1)

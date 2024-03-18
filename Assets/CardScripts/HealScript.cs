@@ -9,7 +9,7 @@ public class HealScript : MonoBehaviour
 
     public void HealBoost()
     {
-        if (MainCharacter.Instance.state == 0)
+        if (MainCharacter.Instance.State == 0)
         {//can artar
             MainCharacter.Instance.Health += ExtraHeal;
 
@@ -22,7 +22,7 @@ public class HealScript : MonoBehaviour
             //can de�i�kenini g�nceller
             HealthText.text = MainCharacter.Instance.Health.ToString();
             //tur atlar
-            MainCharacter.Instance.state = 1;
+            MainCharacter.Instance.State = 1;
         }
         
     }

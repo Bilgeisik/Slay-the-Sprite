@@ -20,7 +20,7 @@ public class Scene_2 : MonoBehaviour
 
     
 
-    public TMPro.TextMeshProUGUI HealthText;
+   
     void Start()
     {
         
@@ -31,7 +31,7 @@ public class Scene_2 : MonoBehaviour
     void Update()
     {
         //wizard attack
-        if (MainCharacter.Instance.state==3 && Stop)
+        if (MainCharacter.Instance.State ==3 && Stop)
         {
             animator.SetFloat("State", 1);
             Invoke("StopWizard",1);
@@ -44,10 +44,20 @@ public class Scene_2 : MonoBehaviour
     void StopWizard()
     {
         animator.SetFloat("State",0 );
-        MainCharacter.Instance.state = 0;
+        MainCharacter.Instance.State = 0;
         Stop= true;
-        MainCharacter.Instance.Health -= 20;
-        HealthText.text = MainCharacter.Instance.Health.ToString();
+
+
+
+        
+        //Kalkan
+        if (MainCharacter.Instance.Shield < 20)
+        {
+            MainCharacter.Instance.Health -=  20 - MainCharacter.Instance.Shield;
+
+
+        }
+
         count++;
  
         if(count>=2)
