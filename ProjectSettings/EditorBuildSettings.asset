@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LobbyCoppy.unity
     guid: 649dac33c0d1a3f4a9727b31d4f6025c
+  - enabled: 1
+    path: Assets/Scenes/scene2.unity
+    guid: 1d0578ba04ed66d4c9765c85c0662a44
   m_configObjects: {}

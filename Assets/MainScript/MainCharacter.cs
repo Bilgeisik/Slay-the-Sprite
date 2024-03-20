@@ -54,7 +54,7 @@ public class MainCharacter : MonoBehaviour
         {
             Health = 100;
             SceneManager.LoadScene("LobbyCoppy");
-            
+            Debug.Log("öldüm");
 
         }
     }

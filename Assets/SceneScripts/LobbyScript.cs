@@ -18,5 +18,9 @@ public class LobbyScript : MonoBehaviour
         SceneManager.LoadScene("Loop1");
 
     }
+    public void Boss2 ()
+    {
+        SceneManager.LoadScene("Scene2");
+    }
 
 }

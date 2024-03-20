@@ -57,7 +57,7 @@ public class Scene_2 : MonoBehaviour
 
 
         }
-
+        MainCharacter.Instance.Shield=0;
         count++;
  
         if(count>=2)
